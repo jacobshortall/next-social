@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #111111;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+.menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+    padding: 24px 100px;
+    margin: auto;
+    max-width: 1600px;
+}
+
+.nav_main-menu {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.nav_auth-menu {
+    gap: 24px;
+    font-weight: 500;
+}

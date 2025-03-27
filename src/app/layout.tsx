@@ -1,4 +1,8 @@
 import type { Metadata } from 'next';
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
+import Nav from './home/nav';
+import './style.css';
 
 export const metadata: Metadata = {
     title: 'Social',
@@ -10,7 +14,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <Theme accentColor="red" grayColor="gray" appearance="dark">
+                    <Nav />
+                    {children}
+                </Theme>
+            </body>
         </html>
     );
 }
