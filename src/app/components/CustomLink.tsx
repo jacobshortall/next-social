@@ -15,7 +15,7 @@ const CustomLink: FC<CustomLinkProps> = ({ href, ...props }) => {
 
     return (
         <NavigationMenu.Link asChild active={isActive}>
-            <Link href={href} className="NavigationMenuLink" {...props} />
+            <Link href={href} {...props} />
         </NavigationMenu.Link>
     );
 };
