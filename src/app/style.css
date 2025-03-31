@@ -12,6 +12,7 @@ body {
     display: flex;
     list-style: none;
 }
+
 .menu a {
     text-decoration: none;
     color: inherit;
@@ -36,4 +37,40 @@ body {
 .nav_auth-menu {
     gap: 24px;
     font-weight: 500;
+}
+
+/* Forms */
+.form-container {
+    width: 100%;
+}
+
+.rt-ContainerInner:has(.form-container) {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container > .rt-Card {
+    width: 100%;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-heading {
+    margin-bottom: 24px;
+}
+
+.form-button-container {
+    align-self: end;
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.form-button {
+    width: max-content;
+    cursor: pointer;
 }
