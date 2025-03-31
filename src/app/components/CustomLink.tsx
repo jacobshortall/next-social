@@ -3,11 +3,11 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { NavigationMenu } from 'radix-ui';
-import { ComponentProps } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-interface CustomLinkProps extends ComponentProps<typeof Link> {
+type CustomLinkProps = ComponentPropsWithoutRef<typeof Link> & {
     href: string;
-}
+};
 
 const CustomLink = ({ href, ...props }: CustomLinkProps) => {
     const pathname = usePathname();
