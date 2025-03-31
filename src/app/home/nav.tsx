@@ -12,11 +12,11 @@ const Nav = () => {
 
             <NavigationMenu.List className="nav_auth-menu menu">
                 <NavigationMenu.Item>
-                    <CustomLink href="/login">Log In</CustomLink>
+                    <CustomLink href="/sign-in">Log In</CustomLink>
                 </NavigationMenu.Item>
 
                 <NavigationMenu.Item>
-                    <CustomLink href="/signup">Sign Up</CustomLink>
+                    <CustomLink href="/sign-up">Sign Up</CustomLink>
                 </NavigationMenu.Item>
             </NavigationMenu.List>
         </NavigationMenu.Root>

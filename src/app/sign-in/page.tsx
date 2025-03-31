@@ -7,25 +7,25 @@ import {
     Button
 } from '@radix-ui/themes';
 
-const LogIn = () => {
+const SignIn = () => {
     return (
         <Container>
             <Box className="form-container" maxWidth="500px">
                 <Card size="4">
                     <Heading as="h1" className="form-heading">
-                        Log in
+                        Sign in
                     </Heading>
 
                     <form>
                         <TextField.Root
                             placeholder="Email"
                             type="email"
-                            id="login-email"
+                            id="signin-email"
                         />
                         <TextField.Root
                             placeholder="Password"
                             type="password"
-                            id="login-password"
+                            id="signin-password"
                         />
 
                         <Box className="form-button-container">
@@ -34,7 +34,7 @@ const LogIn = () => {
                             </Button>
 
                             <Button type="submit" className="form-button">
-                                Log in
+                                Sign in
                             </Button>
                         </Box>
                     </form>
@@ -44,4 +44,4 @@ const LogIn = () => {
     );
 };
 
-export default LogIn;
+export default SignIn;
