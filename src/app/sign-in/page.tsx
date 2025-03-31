@@ -11,9 +11,9 @@ import {
     Flex
 } from '@radix-ui/themes';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, FC } from 'react';
 
-const SignIn = () => {
+const SignIn: FC = () => {
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
 
