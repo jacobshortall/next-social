@@ -18,6 +18,14 @@ body {
     color: inherit;
 }
 
+.standard-wrapper {
+    margin: 20px;
+}
+
+.page-wrapper {
+    margin-top: 60px;
+}
+
 /* Nav */
 .nav {
     display: flex;
@@ -73,4 +81,8 @@ body {
 .form_button {
     width: max-content;
     cursor: pointer;
+}
+
+.form_label-container {
+    margin-bottom: 4px;
 }
