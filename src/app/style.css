@@ -40,37 +40,37 @@ body {
 }
 
 /* Forms */
-.form-container {
+.form_container {
     width: 100%;
 }
 
-.rt-ContainerInner:has(.form-container) {
+.rt-ContainerInner:has(.form_container) {
     display: flex;
     justify-content: center;
 }
 
-.form-container > .rt-Card {
+.form_container > .rt-Card {
     width: 100%;
 }
 
-.form-container form {
+.form_container form {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.form-heading {
+.form_heading {
     margin-bottom: 24px;
 }
 
-.form-button-container {
+.form_button-container {
     align-self: end;
     display: flex;
     gap: 12px;
     margin-top: 12px;
 }
 
-.form-button {
+.form_button {
     width: max-content;
     cursor: pointer;
 }

@@ -10,9 +10,9 @@ import {
 const SignIn = () => {
     return (
         <Container>
-            <Box className="form-container" maxWidth="500px">
+            <Box className="form_container" maxWidth="500px">
                 <Card size="4">
-                    <Heading as="h1" className="form-heading">
+                    <Heading as="h1" className="form_heading">
                         Sign in
                     </Heading>
 
@@ -28,12 +28,12 @@ const SignIn = () => {
                             id="signin-password"
                         />
 
-                        <Box className="form-button-container">
-                            <Button variant="surface" className="form-button">
+                        <Box className="form_button-container">
+                            <Button variant="surface" className="form_button">
                                 Create an account
                             </Button>
 
-                            <Button type="submit" className="form-button">
+                            <Button type="submit" className="form_button">
                                 Sign in
                             </Button>
                         </Box>
