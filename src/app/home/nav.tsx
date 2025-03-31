@@ -1,8 +1,7 @@
 import { NavigationMenu } from 'radix-ui';
 import CustomLink from '../components/CustomLink';
-import { FC } from 'react';
 
-const Nav: FC = () => {
+const Nav = () => {
     return (
         <NavigationMenu.Root className="nav">
             <NavigationMenu.List className="nav_main-menu menu">

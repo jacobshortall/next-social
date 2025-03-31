@@ -10,9 +10,9 @@ import {
     Text,
     Flex
 } from '@radix-ui/themes';
-import { FC, useState } from 'react';
+import { useState } from 'react';
 
-const SignUp: FC = () => {
+const SignUp = () => {
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
 
