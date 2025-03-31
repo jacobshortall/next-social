@@ -10,6 +10,7 @@ import {
     Text,
     Flex
 } from '@radix-ui/themes';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const SignIn = () => {
@@ -18,7 +19,7 @@ const SignIn = () => {
 
     return (
         <Container className="standard-wrapper page-wrapper">
-            <Box className="form_container" maxWidth="400px">
+            <Box className="form_container" maxWidth="540px">
                 <Card size="4">
                     <Heading as="h1" className="form_heading" size="7">
                         Sign in
@@ -93,6 +94,10 @@ const SignIn = () => {
                             </Button>
                         </Box>
                     </form>
+
+                    <Text asChild className="forgot-password">
+                        <Link href="/">Forgot password?</Link>
+                    </Text>
                 </Card>
             </Box>
         </Container>

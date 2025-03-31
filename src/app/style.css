@@ -84,5 +84,18 @@ body {
 }
 
 .form_label-container {
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.forgot-password {
+    margin-top: 16px;
+    display: block;
+    float: right;
+    color: inherit;
+    text-decoration: none;
+    width: max-content;
+}
+
+.forgot-password:hover {
+    color: var(--accent-11);
 }
