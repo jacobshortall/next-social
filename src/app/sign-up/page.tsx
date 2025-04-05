@@ -11,10 +11,22 @@ import {
     Flex
 } from '@radix-ui/themes';
 import { useState } from 'react';
+import { signUp } from '../firebase/firebase-auth';
 
 const SignUp = () => {
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const data = new FormData(event.currentTarget);
+
+        const email = data.get('email') as string;
+        const password = data.get('password') as string;
+
+        signUp(email, password);
+    };
 
     return (
         <Container className="standard-wrapper page-wrapper">
@@ -24,7 +36,7 @@ const SignUp = () => {
                         Sign up
                     </Heading>
 
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <Box className="form_input-container">
                             <Flex
                                 justify="between"
@@ -51,6 +63,7 @@ const SignUp = () => {
                                 placeholder="Email"
                                 type="email"
                                 id="signup-email"
+                                name="email"
                             />
                         </Box>
 
@@ -80,6 +93,7 @@ const SignUp = () => {
                                 placeholder="Password"
                                 type="password"
                                 id="signup-password"
+                                name="password"
                             />
                         </Box>
 

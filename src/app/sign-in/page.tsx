@@ -12,10 +12,22 @@ import {
 } from '@radix-ui/themes';
 import Link from 'next/link';
 import { useState } from 'react';
+import { signIn } from '../firebase/firebase-auth';
 
 const SignIn = () => {
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+
+        const data = new FormData(event.currentTarget);
+
+        const email = data.get('email') as string;
+        const password = data.get('password') as string;
+
+        signIn(email, password);
+    };
 
     return (
         <Container className="standard-wrapper page-wrapper">
@@ -25,7 +37,7 @@ const SignIn = () => {
                         Sign in
                     </Heading>
 
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <Box className="form_input-container">
                             <Flex
                                 justify="between"
@@ -52,6 +64,7 @@ const SignIn = () => {
                                 placeholder="Email"
                                 type="email"
                                 id="signin-email"
+                                name="email"
                             />
                         </Box>
 
@@ -81,6 +94,7 @@ const SignIn = () => {
                                 placeholder="Password"
                                 type="password"
                                 id="signin-password"
+                                name="password"
                             />
                         </Box>
 
