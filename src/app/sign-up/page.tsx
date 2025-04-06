@@ -11,7 +11,7 @@ import {
     Flex
 } from '@radix-ui/themes';
 import { useState } from 'react';
-import { signUp } from '../firebase/firebase-auth';
+import { signUp } from '../../firebase/firebase-auth';
 
 const SignUp = () => {
     const [emailError, setEmailError] = useState(false);

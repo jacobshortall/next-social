@@ -1,5 +1,5 @@
 import { NavigationMenu } from 'radix-ui';
-import CustomLink from '../components/CustomLink';
+import CustomLink from '../../components/CustomLink';
 
 const Nav = () => {
     return (
