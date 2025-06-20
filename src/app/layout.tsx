@@ -3,6 +3,7 @@ import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import Nav from './home/nav';
 import './style.css';
+import { AuthContextProvider } from '@/context/AuthContextProvider';
 
 export const metadata: Metadata = {
     title: 'Social',
@@ -16,8 +17,10 @@ export default function RootLayout({
         <html lang="en">
             <body>
                 <Theme accentColor="red" grayColor="gray" appearance="dark">
-                    <Nav />
-                    {children}
+                    <AuthContextProvider>
+                        <Nav />
+                        {children}
+                    </AuthContextProvider>
                 </Theme>
             </body>
         </html>
