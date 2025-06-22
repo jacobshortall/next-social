@@ -8,6 +8,7 @@ import {
 import { auth } from '@/firebase/firebase';
 import { FirebaseError } from 'firebase/app';
 import { createContext, useContext } from 'react';
+import { useRouter } from 'next/navigation';
 
 type AuthContextType = {
     signUp: (email: string, password: string) => void;
@@ -20,11 +21,14 @@ const AuthContext = createContext<AuthContextType | null>(null);
 const AuthContextProvider = ({
     children
 }: Readonly<{ children: React.ReactNode }>) => {
+    const router = useRouter();
+
     const signUp = (email: string, password: string): void => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log('signed up: ', user);
+                router.push('/');
             })
             .catch((error: FirebaseError) => {
                 console.log(error.message);
@@ -36,7 +40,7 @@ const AuthContextProvider = ({
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log('user signed in: ', user);
-                console.log('server?');
+                router.push('/');
             })
             .catch((error: FirebaseError) => {
                 console.log(error.message);
@@ -47,6 +51,7 @@ const AuthContextProvider = ({
         signOut(auth)
             .then(() => {
                 console.log('user signed out');
+                router.push('/');
             })
             .catch((error: FirebaseError) => {
                 console.log(error);
