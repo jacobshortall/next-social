@@ -3,17 +3,21 @@
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    signOut
+    signOut,
+    User,
+    onAuthStateChanged
 } from 'firebase/auth';
 import { auth } from '@/firebase/firebase';
 import { FirebaseError } from 'firebase/app';
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { setCookie, deleteCookie } from 'cookies-next';
 
 type AuthContextType = {
     signUp: (email: string, password: string) => void;
     signIn: (email: string, password: string) => void;
     signOutCurrentUser: () => void;
+    currentUser: User | null;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -22,6 +26,20 @@ const AuthContextProvider = ({
     children
 }: Readonly<{ children: React.ReactNode }>) => {
     const router = useRouter();
+
+    const [currentUser, setCurrentUser] = useState<User | null>(null);
+
+    useEffect(() => {
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const idToken = await user.getIdToken();
+                setCookie('__session', idToken);
+            } else {
+                deleteCookie('__session');
+            }
+            setCurrentUser(user);
+        });
+    }, []);
 
     const signUp = (email: string, password: string): void => {
         createUserWithEmailAndPassword(auth, email, password)
@@ -59,7 +77,9 @@ const AuthContextProvider = ({
     };
 
     return (
-        <AuthContext.Provider value={{ signUp, signIn, signOutCurrentUser }}>
+        <AuthContext.Provider
+            value={{ signUp, signIn, signOutCurrentUser, currentUser }}
+        >
             {children}
         </AuthContext.Provider>
     );

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
-import Nav from './home/nav';
+import Nav from '../components/Nav';
 import './style.css';
 import { AuthContextProvider } from '@/context/AuthContextProvider';
 

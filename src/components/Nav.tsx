@@ -1,5 +1,6 @@
 import { NavigationMenu } from 'radix-ui';
-import CustomLink from '../../components/CustomLink';
+import CustomLink from './CustomLink';
+import SignOutButton from './SignOutButton';
 
 const Nav = () => {
     return (
@@ -17,6 +18,10 @@ const Nav = () => {
 
                 <NavigationMenu.Item>
                     <CustomLink href="/sign-up">Sign Up</CustomLink>
+                </NavigationMenu.Item>
+
+                <NavigationMenu.Item>
+                    <SignOutButton />
                 </NavigationMenu.Item>
             </NavigationMenu.List>
         </NavigationMenu.Root>
